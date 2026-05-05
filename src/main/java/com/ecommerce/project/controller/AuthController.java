@@ -1,5 +1,5 @@
 package com.ecommerce.project.controller;
-//imports below
+
 import com.ecommerce.project.security.jwt.JwtUtils;
 import com.ecommerce.project.security.request.LoginRequest;
 import com.ecommerce.project.security.response.UserInfoResponse;
@@ -59,9 +59,5 @@ public class AuthController {
         return  ResponseEntity.ok(response);
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(){
-        return null;
-    }
-
+    
 }
