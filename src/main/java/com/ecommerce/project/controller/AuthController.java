@@ -2,8 +2,10 @@ package com.ecommerce.project.controller;
 
 import com.ecommerce.project.security.jwt.JwtUtils;
 import com.ecommerce.project.security.request.LoginRequest;
+import com.ecommerce.project.security.request.SignupRequest;
 import com.ecommerce.project.security.response.UserInfoResponse;
 import com.ecommerce.project.security.services.UserDetailsImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -60,7 +62,7 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(){
+    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signupRequest){
         return null;
     }
 }
