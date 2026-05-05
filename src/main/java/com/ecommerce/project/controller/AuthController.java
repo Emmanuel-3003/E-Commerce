@@ -58,4 +58,10 @@ public class AuthController {
         UserInfoResponse response = new UserInfoResponse(userDetails.getId(),jwtToken,userDetails.getUsername(),roles);
         return  ResponseEntity.ok(response);
     }
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser(){
+        return null;
+    }
+
 }
