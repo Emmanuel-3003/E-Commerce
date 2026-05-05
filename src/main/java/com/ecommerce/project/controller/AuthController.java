@@ -59,5 +59,8 @@ public class AuthController {
         return  ResponseEntity.ok(response);
     }
 
-    
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser(){
+        return null;
+    }
 }
