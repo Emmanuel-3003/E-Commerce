@@ -38,3 +38,21 @@ Dependencies
 </dependency>
 
 ----------------------------------------------------------
+
+Postgres SQL database:
+
+Application.properties
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/ecommerce
+spring.datasource.username=postgres
+spring.datasource.password=<your-password-here>
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+Dependencies
+<dependency>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
+	<scope>runtime</scope>
+</dependency>
