@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class AddressController {
@@ -25,5 +27,17 @@ public class AddressController {
         User user = authUtil.loggedInUser();
         AddressDTO savedAddressDTO = addressService.createAddress(addressDTO, user);
         return new ResponseEntity<AddressDTO>(savedAddressDTO, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/addresses")
+    public ResponseEntity<List<AddressDTO>> getAddresses(){
+        List<AddressDTO> addressList = addressService.getAddresses();
+        return new ResponseEntity<List<AddressDTO>>(addressList, HttpStatus.OK);
+    }
+
+    @GetMapping("/addresses/{addressId}")
+    public ResponseEntity<AddressDTO> getAddressById(@PathVariable Long addressId){
+        AddressDTO addressDTO = addressService.getAddressById(addressId);
+        return new ResponseEntity<AddressDTO>(addressDTO, HttpStatus.OK);
     }
 }
