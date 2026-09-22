@@ -132,9 +132,3 @@ Full request/response schemas are available via Swagger UI.
 - [ ] Fix known endpoint path typos
 - [ ] Add automated test coverage
 - [ ] Add a LICENSE
-
-## Notes & Known Issues
-
-- A couple of endpoint paths contain minor typos carried over from the codebase (e.g. `/admin/prodcuts/{productId}` instead of `products`) — flagging here for anyone integrating against the API.
-- The JWT secret and default seed passwords in `application.properties`/`WebSecurityConfig` are for local development only — replace them with secure, externally-managed secrets before deploying.
-- `spring.jpa.hibernate.ddl-auto=create-drop` will drop and recreate the schema on every restart — switch to `update` or a migration tool (e.g. Flyway/Liquibase) for production use.
